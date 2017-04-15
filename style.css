@@ -30,10 +30,10 @@ body {
 #speech-content-elements {
     position: relative;
     margin: auto;
-    width: 60%;
-    height: 60%;
+    width: 99%;
+    height: 99%;
     max-height: 300px;
-    max-width: 800px;
+    max-width: 400px;
     border: solid 1px #ccc;
 }
 
