@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Speech Loop</title>
+<body>
+<script>
+var respond = function(event) {
+	var text = '';
+ 
+	for (var i = event.resultIndex; i < event.results.length; ++i) {
+		var result = event.results[i];
+ 
+		text += result[0].transcript;
+ 
+		if (result.isFinal) {
+			output.innerHTML = text;
+			output.style.color = 'black';
+			output = createOutput();
+			//speak(text);
+		} else {
+			output.innerHTML = text;
+		}
+	}
+}
+ 
+var createOutput = function() {
+	var output = document.createElement('output');
+	output.style.color = 'gray';
+	document.body.appendChild(output);
+ 
+	return output;
+}
+ 
+var speak = function(text) {
+	// chrome://flags -> Enable experimental Web Platform features
+	var utterance = new SpeechSynthesisUtterance(text);
+	utterance.lang = 'ko-KR';
+	utterance.volume = 1; // 0 to 1
+	utterance.rate = 1; // 0.1 to 10
+	utterance.pitch = 1; //0 to 2
+	window.speechSynthesis.speak(utterance);
+}
+ 
+var listen = function() {
+	var recognition = new webkitSpeechRecognition();
+	recognition.continuous = true;
+	recognition.interimResults = true;
+	//recognition.lang = 'ko-KR';
+        recognition.lang = 'en-GB';
+	recognition.start();
+	recognition.onresult = respond;
+	recognition.onend = function() {
+    recognition.start();
+    };
+	//recognition.onend = function(event) { console.log(event) };
+}
+ 
+var output = createOutput();
+listen();
+
+</script>
+</body>
