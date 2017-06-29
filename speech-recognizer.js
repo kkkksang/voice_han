@@ -44,9 +44,10 @@
                 }
             }
         };
-
-        recognition.onend = function() {
-            $('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');
+        recognition.addEventListener('end', recognition.start);
+        recognition.start();
+        //recognition.onend = function() {
+        //    $('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');
         };
     });
 })(jQuery);
