@@ -44,7 +44,10 @@ body {
     border: none;
     resize: none;
     font-family: arial, sans-serif;
-    font-size: 14px;
+    // font-size: 14px;
+    font-size: 1.5em;
+    
+    
 }
 
 #speech-page-content:focus {
