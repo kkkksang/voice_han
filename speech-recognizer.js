@@ -46,7 +46,8 @@
         };
         recognition.onend = function() {
             $('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');
+            recognition.start();
         };
-        recognition.start();
+        
     });
 })(jQuery);
