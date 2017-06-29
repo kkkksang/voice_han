@@ -46,7 +46,8 @@
         };
         recognition.onend = function() {
             $('.speech-content-mic').removeClass('speech-mic-works').addClass('speech-mic');
-        // ★ below for continuous recognition     
+        // recognition.addEventListener('end', recognition.start);
+        // ★ below for continuous recognition        
         recognition.start();    
         };
         
