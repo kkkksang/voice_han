@@ -40,6 +40,7 @@
                     isFinished = false;
                     insertAtCaret(textAreaID, event.results[i][0].transcript + '\u200B');
                     interimResult += event.results[i][0].transcript + '\u200B';
+                    // \u200B is space charactor 
                 }
             }
         };
