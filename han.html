@@ -45,7 +45,7 @@ var listen = function() {
 	var recognition = new webkitSpeechRecognition();
 	recognition.continuous = true;
 	recognition.interimResults = true;
-	recognition.lang = 'ko-KR'||'en-US';
+	recognition.lang = 'ko-KR';
   //    recognition.lang = 'en-US';
 	recognition.start();
 	recognition.onresult = respond;
