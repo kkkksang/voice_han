@@ -12,7 +12,12 @@ var respond = function(event) {
 		var result = event.results[i];
 
 		text += result[0].transcript;
-
+		//
+if ( text =='노노노'){
+	   window.location.reload();
+	   //reload
+}
+//
 
 		if (result.isFinal) {
 
@@ -31,12 +36,7 @@ var respond = function(event) {
 }
  
 var createOutput = function() {
-		//
-if ( output =='노노노'){
-	   window.location.reload();
-	   //reload
-}
-//
+
 	var output = document.createElement('output');
 	output.style.color = 'gray';
 	document.body.appendChild(output);
