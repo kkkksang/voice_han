@@ -10,13 +10,14 @@ var respond = function(event) {
 	var text = '';
  	for (var i = event.resultIndex; i < event.results.length; ++i) {
 		var result = event.results[i];
- 				 						//
-if ( result =='노노노'){
+
+		text += result[0].transcript;
+		 				 						//
+if ( text =='노노노'){
 	   window.location.reload();
 	   //reload
 }
 //
-		text += result[0].transcript;
 
 		if (result.isFinal) {
 			output.innerHTML = text;
