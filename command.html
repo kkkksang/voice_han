@@ -19,12 +19,7 @@ var respond = function(event) {
 			output.innerHTML = text;
 			output.style.color = 'black';
 			output = createOutput();
-//
-if ( output =='노노노'){
-	   window.location.reload();
-	   //reload
-}
-//
+
 			//speak(text);
 		} else {
 			output.innerHTML = text;
@@ -41,6 +36,12 @@ var createOutput = function() {
 	document.body.appendChild(output);
  
 	return output;
+	//
+if ( output =='노노노'){
+	   window.location.reload();
+	   //reload
+}
+//
 }
  
 var speak = function(text) {
