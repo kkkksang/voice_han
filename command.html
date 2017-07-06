@@ -31,17 +31,18 @@ var respond = function(event) {
 }
  
 var createOutput = function() {
-	var output = document.createElement('output');
-	output.style.color = 'gray';
-	document.body.appendChild(output);
- 
-	return output;
-	//
+		//
 if ( output =='노노노'){
 	   window.location.reload();
 	   //reload
 }
 //
+	var output = document.createElement('output');
+	output.style.color = 'gray';
+	document.body.appendChild(output);
+ 
+	return output;
+
 }
  
 var speak = function(text) {
