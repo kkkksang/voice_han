@@ -3,6 +3,14 @@
 <title>Han</title>
 <body>
 <script>
+navigator.getUserMedia({ audio: true},function (stream) {
+     if(stream.getAudioTracks().length > 0){
+         //code for when none of the devices are available                       
+	  document.body.appendChild(error);   
+     }else{
+        
+     }
+});	
 // can hear continuously
 var respond = function(event) {
 	var text = '';
