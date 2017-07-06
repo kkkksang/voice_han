@@ -21,6 +21,12 @@ var respond = function(event) {
 			//speak(text);
 		} else {
 			output.innerHTML = text;
+			//
+if ( text =='노노노'){
+	   window.location.reload();
+	   //reload
+}
+//
 		}
 	}
 }
@@ -58,12 +64,7 @@ var listen = function() {
 }
  
 var output = createOutput();
-//
-if ( text =='노노노'){
-	   window.location.reload();
-	   //reload
-}
-//	
+	
 listen();
 </script>
 </body>
