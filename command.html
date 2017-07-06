@@ -12,14 +12,15 @@ var respond = function(event) {
 		var result = event.results[i];
 
 		text += result[0].transcript;
-		 				 						//
-if ( text =='노노노'){
+
+
+		if (result.isFinal) {
+					 				 						//
+if ( result =='노노노'){
 	   window.location.reload();
 	   //reload
 }
 //
-
-		if (result.isFinal) {
 			output.innerHTML = text;
 			output.style.color = 'black';
 			output = createOutput();
