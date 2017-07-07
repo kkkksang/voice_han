@@ -15,10 +15,11 @@ var respond = function(event) {
 
 
 		if (result.isFinal) {
-			// text
+			// text present, no exist output here
+			//
 			alert(text); 
-			alert(output); 
-			if (text == '노노노') {
+			
+			if (text !== '노노노') {
 				window.location.reload();
 			}
 			//
