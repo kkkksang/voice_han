@@ -17,22 +17,23 @@ var respond = function(event) {
 		if (result.isFinal) {
 			// text present, no exist output here
 			output.innerHTML = text;
+					
+			//
+			alert(output.innerHTML); 
+			
+			if (string.output.innerHTML('노노노')) {
+				window.location.reload();
+			}
+			//
 			output.style.color = 'black';
 			output = createOutput();
 			
 				
 			//speak(text);
 		} else {
-			
+			//interim resut display
 			output.innerHTML = text;
-			
-			//
-			alert(output.innerHTML); 
-			
-			if (string.text('노노노')) {
-				window.location.reload();
-			}
-			//
+	
 
 
 
