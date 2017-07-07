@@ -12,5 +12,5 @@ if(result.isFinal) {
 	}
 };
 
-recognition.lang = ko-KR;
+recognition.lang = en-US;
 recognition.start();
