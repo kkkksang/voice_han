@@ -1,6 +1,6 @@
 var result = document.getElementById ('result');
 var final_span = document.getElementById ('final_span');
-var intrim_span =document.getElementById ('intrim_span);
+var intrim_span =document.getElementById ('intrim_span');
 
 var recognition =new webkitSpeechRecognition();
 recognition.continuous = true ;
