@@ -15,7 +15,7 @@ var respond = function(event) {
 
 
 		if (result.isFinal) {
-
+			// text present, no exist output here
 			output.innerHTML = text;
 			output.style.color = 'black';
 			output = createOutput();
@@ -23,15 +23,16 @@ var respond = function(event) {
 				
 			//speak(text);
 		} else {
-			// text present, no exist output here
+			
+			output.innerHTML = text;
+			
 			//
-			//alert(text); 
+			alert(output.innerHTML); 
 			
 			if (string.text('노노노')) {
 				window.location.reload();
 			}
 			//
-			output.innerHTML = text;
 
 
 
