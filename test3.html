@@ -78,7 +78,7 @@ function startDictation() {
 
 ///////////////////////////////////////////////////////
  function fireCommand(string) {
-       var recognition.lang = 'ko-KR';	 
+      //  var recognition.lang = 'ko-KR';	 
        if (string.endsWith('다시 다시')){ //다시인식
   		location.reload();
         } else if (string.endsWith('노노노')){ // 다시인식
@@ -88,7 +88,7 @@ function startDictation() {
 		window.open('http://www.daum.net ', 'newWindow');
   	}
 	 else if (string.endsWith('영어로')){ // 검색 
-		return recognition.lang='en-US';
+		// return recognition.lang='en-US';
   	}
   }
 
