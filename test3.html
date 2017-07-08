@@ -80,7 +80,7 @@ function startDictation() {
  function fireCommand(string) {
       //  var recognition.lang = 'ko-KR';	 
        if (string.endsWith('다시 다시')){ //다시인식
-  		location.reload();
+  		location.reload(true); //
         } else if (string.endsWith('노노노')){ // 다시인식
   		location.reload();
   	}
