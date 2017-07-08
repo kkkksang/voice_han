@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="utf-8">  
+ <meta lang="utf-8">
+<title>HanVoice3e</title>
+</head>
+<body>
+<div id="result">
+  <span id="final_span" class="final"></span>
+  <span id="interim_span" class="interim"></span>
+</div>
+</body>
+
+<script type="text/javascript">
+// 여기는 단순하게 줄여 놓은 것 임 
+var final_transcript = '';
+var recognizing = false;
+
+if ('webkitSpeechRecognition' in window) {
+
+  var recognition = new webkitSpeechRecognition();
+
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+  recognition.onstart = function() {
+    recognizing = true;
+  };
+
+  recognition.onerror = function() {
+    console.log(event.error);
+  };
+
+//  테스트 중단 되었 을때 
+recognition.onend = function(event) {
+      // recognition.start();
+         startDictation();
+  };
+
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+    interim_span.innerHTML = linebreak(interim_transcript);
+    fireCommand(interim_transcript); // 여기서 명령어 실행
+    
+  };
+}
+
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+
+function capitalize(s) {
+  return s.replace(s.substr(0,1), function(m) { return m.toUpperCase(); });
+}
+
+function startDictation() {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = 'ko-KR';  //불필요하기도
+  recognition.start();
+  final_span.innerHTML = '';
+  interim_span.innerHTML = '';
+}
+
+///////////////////////////////////////////////////////
+ function fireCommand(string) {
+      //  var recognition.lang = 'ko-KR';	 
+       if (string.endsWith('다시 다시')){ //다시인식
+  		location.reload(true); //
+        } else if (string.endsWith('노노노')){ // 다시인식
+  		location.reload();
+  	}
+	else if (string.endsWith('검색')){ // 검색 
+		window.open('http://www.daum.net ', 'newWindow');
+  	}
+	 else if (string.endsWith('영어로')){ // 검색 
+	
+		// recognition.lang='en-US';
+		//window.open('https://kkkksang.github.io/voice_han/eng.html', 'newWindow'); 
+		 window.location.href='https://kkkksang.github.io/voice_han/eng3.html';
+  	}
+  }
+
+////////////////////////////////////// now start
+ startDictation();
+</script>
+</html>
