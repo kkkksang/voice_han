@@ -86,6 +86,9 @@ function startDictation() {
 	else if (string.endsWith('검색')){ // 검색 
 		window.open('http://www.daum.net ', 'newWindow');
   	}
+	 else if (string.endsWith('영어로')){ // 검색 
+		recognition.lang='en-US';
+  	}
   }
 
 ////////////////////////////////////// now start
