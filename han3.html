@@ -82,7 +82,7 @@ function startDictation() {
        if (string.endsWith('다시 다시')){ //다시인식
   		location.reload(true); //
         } else if (string.endsWith('노노')){ // 다시인식
-  		location.reload();
+  		location.reload(true);
   	}
 	else if (string.endsWith('검색')){ // 검색 
 		window.open('http://www.daum.net ', 'newWindow');
