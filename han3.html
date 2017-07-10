@@ -46,7 +46,7 @@ recognition.onend = function(event) {
         interim_transcript += event.results[i][0].transcript;
       }
     }
-    final_transcript = capitalize(final_transcript);
+    // final_transcript = capitalize(final_transcript);
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
     fireCommand(interim_transcript); // 여기서 명령어 실행
