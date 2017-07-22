@@ -25,6 +25,7 @@ if ('webkitSpeechRecognition' in window) {
   recognition.interimResults = true;
 
   recognition.onstart = function() {
+	  start_img.src = 'mic-animate.gif';
     recognizing = true;
   };
 
