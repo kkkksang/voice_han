@@ -52,6 +52,7 @@ recognition.onend = function(event) {
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
     fireCommand(interim_transcript); // 여기서 명령어 실행
+	  start_img.src = 'mic-animate.gif';
     
   };
 }
