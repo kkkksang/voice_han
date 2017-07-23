@@ -36,6 +36,7 @@ if ('webkitSpeechRecognition' in window) {
 
 //  테스트 중단 되었 을때 
 recognition.onend = function(event) {
+mic_ready.innerHTML ="<img src='mic.gif' width='16' height='16' >";	
       // recognition.start();
          startDictation();
   };
