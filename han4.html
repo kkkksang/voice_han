@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="result">
-  <span id="mic_ready" class= "mic"> </span>
+  <span id="mic_ready" class= "mic"> </span> 
   <span id="final_span" class="final"></span>
   <span id="interim_span" class="interim"></span>
 </div>
@@ -26,7 +26,7 @@ if ('webkitSpeechRecognition' in window) {
   recognition.interimResults = true;
 
   recognition.onstart = function() {
-  mic_ready.innerHTML ="<img src='animate.gif' >";	
+  mic_ready.innerHTML ="<img src='animate.gif' width='16' height='16' >";	
     recognizing = true;
   };
 
