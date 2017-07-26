@@ -27,7 +27,8 @@ if ('webkitSpeechRecognition' in window) {
   recognition.interimResults = true;
 
   recognition.onstart = function() {
-  //mic_ready.innerHTML ="<img src='animate.gif' width='16' height='16' >";	
+  //mic_ready.innerHTML ="<img src='animate.gif' width='16' height='16' >";
+final_span.innerHTML ="<img src='animate.gif' width='16' height='16' >";
     recognizing = true;
   };
 
