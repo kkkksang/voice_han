@@ -26,7 +26,7 @@ if ('webkitSpeechRecognition' in window) {
   recognition.onstart = function() {
     recognizing = true;
     // document.getElementById('result').style.backgroundColor = '#000000';  //RGB코드 
-	  document.body.style.backgroundColor = "red";
+	  document.body.style.backgroundColor = "lightblue";
 	  
   };
 
@@ -37,6 +37,7 @@ if ('webkitSpeechRecognition' in window) {
 //  테스트 중단 되었 을때 
 recognition.onend = function(event) {
       // recognition.start();
+	document.body.style.backgroundColor = "gray";
          startDictation();
   };
 
