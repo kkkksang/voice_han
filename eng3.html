@@ -25,6 +25,8 @@ if ('webkitSpeechRecognition' in window) {
 
   recognition.onstart = function() {
     recognizing = true;
+    document.getElementById('result').style.backgroundColor = '#000000';  //RGB코드  
+	  
   };
 
   recognition.onerror = function() {
