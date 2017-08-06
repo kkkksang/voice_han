@@ -31,7 +31,8 @@ if ('webkitSpeechRecognition' in window) {
   };
 
   recognition.onend = function() {
-    recognizing = false;
+    recognition.start();
+    //recognizing = false;
   };
 
   recognition.onresult = function(event) {
