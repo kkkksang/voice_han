@@ -3,9 +3,6 @@
 <meta charset="utf-8">  
  <meta lang="utf-8">
 <title>HanVoiceLong</title>
-/*
-* <link href="color.css" rel="stylesheet" type="text/css" />
-*/
 </head>
 <body>
 <div id="result">
@@ -49,7 +46,7 @@ if ('webkitSpeechRecognition' in window) {
     final_transcript = capitalize(final_transcript);
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
-    fireCommand(interim_transcript); // ¿©±â¼­ ¸í·É¾î ½ÇÇà
+    fireCommand(interim_transcript); // ì—¬ê¸°ì„œ ëª…ë ¹ì–´ ì‹¤í–‰
     
   };
 }
@@ -79,14 +76,14 @@ function startDictation() {
 
 ///////////////////////////////////////////////////////
  function fireCommand(string) {
-  	if (string.endsWith('¿£ÅÍ')) { //ÀÌ°Ç¾ÈµÊ
+  	if (string.endsWith('ì—”í„°')) { //ì´ê±´ì•ˆë¨
   	newLine();
-        } else if (string.endsWith('´Ù½Ã ´Ù½Ã')){
+        } else if (string.endsWith('ë‹¤ì‹œ ë‹¤ì‹œ')){
   		location.reload();
-       	} else if (string.endsWith('±×¸°')) {
+       	} else if (string.endsWith('ê·¸ë¦°')) {
     //result.bgColor="ivory";
-   	} else if (string.endsWith('½ºÇÇÄ¡') || string.endsWith('¸»ÇØÁà') || string.endsWith('¸» ÇØ Áà')) {
-  	  textToSpeech($('#final_span').text() || 'Àü À½¼º ÀÎ½ÄµÈ ±ÛÀÚ¸¦ ÀĞ½À´Ï´Ù.');
+   	} else if (string.endsWith('ìŠ¤í”¼ì¹˜') || string.endsWith('ë§í•´ì¤˜') || string.endsWith('ë§ í•´ ì¤˜')) {
+  	  textToSpeech($('#final_span').text() || 'ì „ ìŒì„± ì¸ì‹ëœ ê¸€ìë¥¼ ì½ìŠµë‹ˆë‹¤.');
   	}
   }
 
