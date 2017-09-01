@@ -81,7 +81,7 @@ function startDictation() {
     return;
   }
   final_transcript = '';
-  recognition.lang = 'ko-KR';  //불필요하기도
+  recognition.lang = '';  //불필요하기도
   recognition.start();
   final_span.innerHTML = '';
   interim_span.innerHTML = '';
