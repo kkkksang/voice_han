@@ -41,9 +41,7 @@ if ('webkitSpeechRecognition' in window) {
 recognition.onend = function(event) {
 // mic_ready.innerHTML ="<img src='mic.gif' width='16' height='16' >";	
       // recognition.start();
-	document.body.style.backgroundColor = "lightgray";
-	
-         startDictation();
+	document.body.style.backgroundColor = "lightgray";   
   };
 
   recognition.onresult = function(event) {
