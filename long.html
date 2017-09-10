@@ -47,7 +47,7 @@ if ('webkitSpeechRecognition' in window) {
     final_transcript = capitalize(final_transcript);
     final_span.innerHTML = linebreak(final_transcript);
     interim_span.innerHTML = linebreak(interim_transcript);
-    fireCommand(interim_transcript); // 여기서 명령어 실행
+    //fireCommand(interim_transcript); // 여기서 명령어 실행
     
   };
 }
@@ -76,6 +76,7 @@ function startDictation() {
 }
 
 ///////////////////////////////////////////////////////
+ /*
  function fireCommand(string) {
   	if (string.endsWith('엔터')) { //이건안됨
   	newLine();
@@ -87,7 +88,7 @@ function startDictation() {
   	//  textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
   	}
   }
-
+*/
 ////////////////////////////////////// now start
  startDictation();
 </script>
