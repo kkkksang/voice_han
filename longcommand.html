@@ -67,6 +67,8 @@ function startDictation() {
  function fireCommand(string) {
       if (string.endsWith('다시 다시')){
   	       location.reload();
+      } else if (string.endsWith('노노노')){ 
+  		      window.location.href='https://kkkksang.github.io/voice_han/eng3.html';    
       } else if(string.endsWith('엔터')) { //이건안됨
   	     newline();
       }
