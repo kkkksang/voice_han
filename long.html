@@ -23,7 +23,6 @@ if ('webkitSpeechRecognition' in window) {
   recognition.interimResults = true;
 
   recognition.onstart = function() {
-    document.body.style.backgroundColor = "lightyellow";
     recognizing = true;
   };
 
