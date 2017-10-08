@@ -70,24 +70,27 @@ function startDictation() {
   interim_span.innerHTML = '';
 }
 ///////////////////////////////////////////////////////
+
 function fireCommand(string) {
 	// REROAD
+	// 해결할 문제 string 소문자로 전환
+
 	if (string.endsWith('F5') || string.endsWith('f5') || string.endsWith('다시 다시') || string.endsWith('repeat repeat')) {
 	location.reload(true); 
 	
-        // ENGLISH
-	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')) {
+        // ENGLISH (Light blue) 
+	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')string.endsWith('노노노')) {
 	window.location.href='https://kkkksang.github.io/voice_han/enus.html';
 
-	// KOREAN
-	} else  if (string.endsWith('Kkk') || string.endsWith('k k k')  || string.endsWith('kkk') ) {
+	// KOREAN (Light yellow) 
+	} else  if (string.endsWith('Kkk') || string.endsWith('KKK') || string.endsWith('k k k')  || string.endsWith('kkk') || string.endsWith('ていていてい') ) {
 	window.location.href='https://kkkksang.github.io/voice_han/kokr.html';
 
-	// JAPANESE
+	// JAPANESE 
 	} else if (string.endsWith('jjj') || string.endsWith('Jjj')) {
 	window.location.href='https://kkkksang.github.io/voice_han/jajp.html';
 
-	//CHINESE
+	//CHINESE (pink)KKK 
 	} else if (string.endsWith('hahaha') || string.endsWith('ははは') || string.endsWith('하하하') || string.endsWith('哈哈哈')) {
 	window.location.href='https://kkkksang.github.io/voice_han/hanscn.html';
 	}
