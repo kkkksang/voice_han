@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">  
  <meta lang="utf-8">
-<title>HanVoice3e</title>
+<title>*HanVoice3e</title>
 </head>
 <body>
 <div id="result">
@@ -70,25 +70,30 @@ function startDictation() {
   interim_span.innerHTML = '';
 }
 ///////////////////////////////////////////////////////
- function fireCommand(string) {
-        if (string.endsWith('repeat repeat')){ //다시인식
-  		location.reload(true); //
-	/*	
-        } else if (string.endsWith('search')){ // 검색 
-		window.open('http://www.daum.net ', 'newWindow');
-  	} else if (string.endsWith('Korea')){ // 한글로
-		window.location.href='https://kkkksang.github.io/voice_han/han3.html';
-  	} else if (string.endsWith('Korean')){ // 한글로
-		window.location.href='https://kkkksang.github.io/voice_han/han3.html';
-  	} else if (string.endsWith('Hunger')){ // 한글로
-		window.location.href='https://kkkksang.github.io/voice_han/han3.html';
-  	}  else if (string.endsWith('korean')){ // 한글로
-		window.location.href='https://kkkksang.github.io/voice_han/han3.html';
-	*/
-	} else if (string.endsWith('no no no')){ // 다시인식
-  		window.location.href='https://kkkksang.github.io/voice_han/han3.html';
-	} 
-  }
+function fireCommand(string) {
+	// REROAD
+	if (string.endsWith('F5') || string.endsWith('f5) || string.endsWith('다시 다시') || string.endsWith('repeat repeat')) {
+	location.reload(true); 
+	
+        // ENGLISH
+	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')) {
+	window.location.href='https://kkkksang.github.io/voice_han/enus.html';
+
+	// KOREAN
+	} else  if (string.endsWith('Kkk') || string.endsWith('k k k')  || string.endsWith('kkk') ) {
+	window.location.href='https://kkkksang.github.io/voice_han/kokr.html';
+
+	// JAPANESE
+	} else if (string.endsWith('jjj') || string.endsWith('Jjj')) {
+	window.location.href='https://kkkksang.github.io/voice_han/jajp.html';
+
+	//CHINESE
+	} else if (string.endsWith('hahaha') || string.endsWith('ははは') || string.endsWith('하하하') || string.endsWith('哈哈哈')) {
+	window.location.href='https://kkkksang.github.io/voice_han/hanscn.html';
+	}
+}
+
+
 ////////////////////////////////////// now start
  startDictation();
 </script>
