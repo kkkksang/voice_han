@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="utf-8">  
+ <meta lang="utf-8">
+	<link rel="shortcut icon" href="favicon.ico" height='16' width='16' type="image/x-icon"> 
+<title>*HanVoice4</title>
+</head>
+<body>
+<div id="result">
+ 
+  <span id="final_span" class="final" style="font-size:20px;"></span>
+  <span id="interim_span" class="interim" style="color:green;font-size: 20px;" ></span>
+ </div>
+</body>
+
+<script type="text/javascript">
+// 여기는 단순하게 줄여 놓은 것 임 
+var final_transcript = '';
+var recognizing = false;
+if ('webkitSpeechRecognition' in window) {
+  var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+  recognition.onstart = function() {
+//  mic_ready.innerHTML ="<img src='animate.gif' width='16' height='16' >";
+// final_span.innerHTML ="<img src='animate.gif' width='16' height='16' >";
+	  
+	  document.body.style.backgroundColor = "lightyellow";
+    recognizing = true;
+  };
+  recognition.onerror = function() {
+    console.log(event.error);
+  };
+//  테스트 중단 되었 을때 
+recognition.onend = function(event) {
+// mic_ready.innerHTML ="<img src='mic.gif' width='16' height='16' >";	
+      // recognition.start();
+	document.body.style.backgroundColor = "lightgray";   
+  };
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    // final_transcript = capitalize(final_transcript);
+    //final_span.innerHTML = linebreak(final_transcript);
+    //interim_span.innerHTML = linebreak(interim_transcript);
+    final_span.innerHTML = final_transcript;
+    interim_span.innerHTML = interim_transcript;
+    fireCommand(interim_transcript); // 여기서 명령어 실행
+	     
+  };
+}
+var two_line = /\n\n/g;
+var one_line = /\n/g;
+function linebreak(s) {
+  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+}
+function capitalize(s) {
+  return s.replace(s.substr(0,1), function(m) { return m.toUpperCase(); });
+}
+function startDictation() {
+  if (recognizing) {
+    recognition.stop();
+    return;
+  }
+  final_transcript = '';
+  recognition.lang = '';  //불필요하기도
+  recognition.start();
+  final_span.innerHTML = '';
+  interim_span.innerHTML = '';
+}
+///////////////////////////////////////////////////////
+function fireCommand(string) {
+	// REROAD
+	if (string.endsWith('F5') || string.endsWith('f5) || string.endsWith('다시 다시') || string.endsWith('repeat repeat')) {
+	location.reload(true); 
+	
+        // ENGLISH
+	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')) {
+	window.location.href='https://kkkksang.github.io/voice_han/enus.html';
+
+	// KOREAN
+	} else  if (string.endsWith('Kkk') || string.endsWith('k k k')  || string.endsWith('kkk') ) {
+	window.location.href='https://kkkksang.github.io/voice_han/kokr.html';
+
+	// JAPANESE
+	} else if (string.endsWith('jjj') || string.endsWith('Jjj')) {
+	window.location.href='https://kkkksang.github.io/voice_han/jajp.html';
+
+	//CHINESE
+	} else if (string.endsWith('hahaha') || string.endsWith('ははは') || string.endsWith('하하하') || string.endsWith('哈哈哈')) {
+	window.location.href='https://kkkksang.github.io/voice_han/hanscn.html';
+	}
+}
+
+
+////////////////////////////////////// now start
+ startDictation();
+</script>
+</html>
