@@ -32,7 +32,6 @@ if ('webkitSpeechRecognition' in window) {
 recognition.onend = function(event) {
       // recognition.start();
 	document.body.style.backgroundColor = "gray";
-         startDictation();
   };
   recognition.onresult = function(event) {
     var interim_transcript = '';
