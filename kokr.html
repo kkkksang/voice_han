@@ -75,16 +75,17 @@ function startDictation() {
   interim_span.innerHTML = '';
 }
 ///////////////////////////////////////////////////////
-function fireCommand(string) {
-	// REROAD
+function fireCommand(toLowerCase(string)) {
+	// REROAD 중한일영순
 	if (string.endsWith('F5') || string.endsWith('f5') || string.endsWith('다시 다시') || string.endsWith('repeat repeat')) {
 	location.reload(true); 
-	// ENGLISH
-	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')) {
+	
+        // ENGLISH
+	} else if (string.endsWith('No no no') || string.endsWith('no no no') || string.endsWith('ののの')string.endsWith('노노노')) {
 	window.location.href='https://kkkksang.github.io/voice_han/enus.html';
 
 	// KOREAN
-	} else  if (string.endsWith('Kkk') || string.endsWith('k k k')  || string.endsWith('kkk') ) {
+	} else  if (string.endsWith('Kkk') || string.endsWith('KKK') || string.endsWith('k k k')  || string.endsWith('kkk') || string.endsWith('ていていてい') ) {
 	window.location.href='https://kkkksang.github.io/voice_han/kokr.html';
 
 	// JAPANESE
