@@ -20,14 +20,14 @@ if ('webkitSpeechRecognition' in window) {
   recognition.continuous = true;
   recognition.interimResults = true;
   recognition.onstart = function() {
-	document.body.style.backgroundColor = "lightyellow";
+	// document.body.style.backgroundColor = "lightyellow";
     	recognizing = true;
   };
   recognition.onerror = function() {
     console.log(event.error);
   };
   recognition.onend = function() {
-	document.body.style.backgroundColor = "lightgray";
+	document.body.style.backgroundColor = "darkgray";
     	recognition.start();
     //recognizing = false;
   };
@@ -46,7 +46,7 @@ if ('webkitSpeechRecognition' in window) {
     final_span.innerHTML = final_transcript;
     interim_span.innerHTML = interim_transcript;
 	
-    fireCommand(interim_transcript); // ¿©±â¼­ ¸í·É¾î ½ÇÇà
+    fireCommand(interim_transcript); // ì—¬ê¸°ì„œ ëª…ë ¹ì–´ ì‹¤í–‰
     
   };
 }
@@ -74,11 +74,11 @@ function startDictation() {
 }
 ///////////////////////////////////////////////////////
  function fireCommand(string) {
-  	if (string.endsWith('¿£ÅÍ')) { //ÀÌ°Ç¾ÈµÊ
+  	if (string.endsWith('ì—”í„°')) { //ì´ê±´ì•ˆë¨
   	newLine();
-        } else if (string.endsWith('´Ù½Ã ´Ù½Ã')){
+        } else if (string.endsWith('ë‹¤ì‹œ ë‹¤ì‹œ')){
   		location.reload(true);
-        } else if (string.endsWith('³ë³ë³ë')){ // ´Ù½ÃÀÎ½Ä
+        } else if (string.endsWith('ë…¸ë…¸ë…¸')){ // ë‹¤ì‹œì¸ì‹
   		window.location.href='https://kkkksang.github.io/voice_han/eng3.html';
   	}
   }
